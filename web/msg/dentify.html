@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片验证码</title>
+</head>
+<body>
+<script>
+    function reloadImage() {
+        document.getElementById('btn').disabled = true;
+        document.getElementById('identity').src='servlet/LoginServlet?ts='+new Date().getTime();
+    }
+</script>
+
+<img src="servlet/LoginServlet" id="identity" onload="btn.disabled=false;">
+
+<input type="button" value="换一张" onclick="reloadImage()" id="btn">
+
+</body>
+</html>
